@@ -1,0 +1,27 @@
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+
+  batch:
+    initialize-schema: always
+
+identity-data-batch:
+  chunk-size: 1000
+  expiry:
+
+secrets:
+  filePath: classpath:/config/secrets
